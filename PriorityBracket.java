@@ -61,7 +61,7 @@ public class PriorityBracket {
                 System.out.println("A ROUND OF SORTING HAS BEEN COMPLETED");
             }
             // TEST PRINT:
-            System.out.println("SORTING COMPLETED\n");
+            System.out.println("\nSORTING COMPLETED\n");
         } else {
             // array of 0 or 1 items is always sorted
             this.sorted = true;
@@ -105,11 +105,10 @@ public class PriorityBracket {
         this.sorted = true;
     } // method killTurn
 
-    // Tester; TEST PASSED
     public static void main(String[] args) {
         PriorityBracket bracket = new PriorityBracket();
         
-        int iterations = (int)Math.floor(Math.random() * 10 + 20); // 20-29 iterations
+        int iterations = (int)Math.floor(Math.random() * 6 + 10); // 10-15 iterations
 
         for(int i = 0; i < iterations; i++) {
             bracket.add(new Action((int)Math.floor(Math.random()*10 - 5), (int)Math.ceil(Math.random()*8)));

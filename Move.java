@@ -27,14 +27,14 @@ public class Move {
 
     /** Damage calculator incl. STAB and type effectiveness */
     public int attack(Pokemon_BS attacker, Pokemon_BS defender) {
-        double powerMult = 1 * (attacker.getSTAB(this.type) ? 1.5 : 1) * (defender.weak(type));
+        double powerMult = (Math.random() * 0.15 + 0.85) * (attacker.getSTAB(this.type) ? 1.5 : 1) * (defender.weak(type));
         
         return this.damage(attacker, defender, powerMult);
     } // method attack
     
     /** Raw DMG calculator with ATK and DEF. Includes powerMult if used as an argument. */
     public int damage(Pokemon_BS attacker, Pokemon_BS defender, double powerMult) {
-        return (int)(this.power * ((double)attacker.statSet().stat_combat(2*(this.type.category()-1)) / (double)defender.statSet().stat_combat((this.type.category()*2)-1)) * powerMult);
+        return (int)(this.power * ((double)attacker.statSet().stat_combat(2*(this.type.category()-1)) / (double)defender.statSet().stat_combat(2*(this.type.category())-1)) * powerMult);
     } // method damage
 
     /** Hit rate checker */
