@@ -21,7 +21,7 @@ The graphical features of the game are essentially in the planning phase, but
 the general aesthetic of the game aims to replicate that of Pokémon Emerald as
 well.
 
-Here is an example of how this might look: https://youtu.be/uvlWKOf7aeE?si=CoTch6Mw-qKNoXbk&t=40
+Here is an example of how this might look: https://youtu.be/uvlWKOf7aeE?si=CoTch6Mw-qKNoXbk&t=43
 
 As far as sprites (2D character models) are concerned, characters with existing
 sprites in Pokémon Emerald will have their sprites from that game used, while
