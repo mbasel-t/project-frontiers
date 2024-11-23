@@ -72,7 +72,7 @@ Dragon-type Pokémon will resist Fighting-, Bug-, Grass-, Water-, and Fire-type
 attacks, and will be weak to Rock-, Dragon-, and Ice-type attacks. Because both
 Dragon and Flying are weak to Ice and resist Grass, these interactions will be
 intensified, so a Dragon- and Flying-type Pokémon will shrug off almost any
-Grass-type attacks, but will be fatally weak to Ice-type ones.
+Grass-type attack, but will take fatal damage from an Ice-type one.
 
 Aside from type effectiveness, the damage of an attack is based on either the
 user's Physical Attack and the target's Physical Defense stat, or the user's
@@ -89,11 +89,13 @@ Moves. Status Moves can have a range of effects, ranging from setting up traps
 on the enemy side of the field, poisoning enemies to deal damage over time, and
 altering the user's or opponent's stats in your favor. While these Moves do not
 directly deal damage, they can serve a variety of offensive, defensive, and
-utility functions to help the player achieve their goal.
+utility functions to help the player achieve their goal of defeating all
+opposing Pokémon.
 
 There are obviously a lot of intricacies to the game, but they are fairly easy
 to get used to through experience, and, once the player understands the various
-systems within the game, they are rewarded greatly.
+systems within the game and knows how to execute them, they will be rewarded
+greatly through success in combat.
 
 ### Challenges (WIP)
 
