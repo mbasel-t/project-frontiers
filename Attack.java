@@ -1,23 +1,26 @@
 //package project_frontiers;
 
-public class Move {
+public class Attack {
 
     private int power;
     private int accuracy;
-    private boolean status;
+    private boolean status = false;
     private int priority;
+    private int offensiveStat;
+    private int defensiveStat;
 
     private Type type;
 
     private String name;
 
-    public Move(String _name, Type _type, boolean _status, int _pow, int _acc, int _priority) {
+    public Move(String _name, Type _type, int _pow, int _acc, int _priority) {
         this.name = _name;
         this.type = _type;
         this.power = _pow;
         this.accuracy = _acc;
-        this.status = _status;
         this.priority = _priority;
+        this.offensiveStat = (this.type.category() == 2 ? 2 : 0);
+        this.defensiveStat = (this.type.category() == 2 ? 3 : 1);
     }
 
     /** Name accessor */
@@ -34,7 +37,7 @@ public class Move {
     
     /** Raw DMG calculator with ATK and DEF. Includes powerMult if used as an argument. */
     public int damage(Pokemon_BS attacker, Pokemon_BS defender, double powerMult) {
-        return (int)(this.power * ((double)attacker.statSet().stat_combat(2*(this.type.category()-1)) / (double)defender.statSet().stat_combat(2*(this.type.category())-1)) * powerMult);
+        return (int)(this.power * ((double)attacker.statSet().stat_combat(this.offensiveStat) / (double)defender.statSet().stat_combat(this.defensiveStat)) * powerMult);
     } // method damage
 
     /** Hit rate checker */
