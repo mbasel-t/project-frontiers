@@ -1,4 +1,4 @@
-## Purpose
+# Purpose
 Project Frontiers is inspired by the Battle Frontier from some older Pokémon
 games, like Pokémon Emerald (2005), Pokémon Platinum (2008), and Pokémon
 HeartGold and SoulSilver (2009). The Battle Frontier was a location where
@@ -14,20 +14,62 @@ the combat system will be largely based on that of Pokémon Emerald (2005), it
 will include newer characters, items, and skills for players to make use of,
 while still maintaining the spirit of Pokémon Emerald's gameplay.
 
-Project Frontiers will not be monetized.
+Project Frontiers will not be monetized in any capacity.
+
+## Short-term programming goals
+I have reached a phase of being able to have two Pokémon have a very simple
+battle. These two Pokémon can use a few different attacks, and these attacks
+can miss, but that's about it. Compared to the original version of Pokémon,
+this is lacking.
+
+The current way I have had moves set up is very simple, but not scaleable. Each
+attack was an instance of the same Move.java class, meaning they could not
+really do anything super unique, which is bad because Pokémon Emerald has a lot
+of unique moves. Let's take Snore, for instance. Snore is an attack that only
+works if the user is sleeping. If the user hits Snore on a target that has not
+moved this turn, the target has a 30% chance of having that action skipped. As
+a "sound-based" move, Snore also has special interactions with certain
+defensive benefits of other Pokémon that may allow it to deal damage when an
+attack normally would not, or cause it to do nothing when most other moves
+would work just fine. Moves like Snore that have a number of unique properties
+cannot be instances of the exact same class as every other move in the game.
+
+That being said, my solution is to divide moves into smaller groups with very
+similar properties. For instance, there are a lot of Fire-type attacks that
+have a chance to Burn the target, like Ember, Flamethrower, Fire Blast, Heat
+Wave, Inferno, and Sacred Fire. Aside from having variances in the damage these
+attacks deal, their chance of hitting, and their chance of Burning the target,
+these are all the exact same move, so it is reasonable for them to be instances
+of the same class. However, a very different move that has a completely
+different set of features, like Snore, will be under a different class.
+
+Currently, this new system of implementing moves is a work-in-progress, and is
+divided into three levels. As of now, all move classes extend the Move.java
+abstract class. Damage-dealing moves will extend the Attack.java abstract
+class. Every Move object will have the use() function, which will be called
+in the battle to execute the move's effects.
+
+Because the implementations are a work-in-progress, my code is currently
+non-functional. However, I am working to restore this program to its previous
+level. Once this is done, it will be significantly easier to develop battles
+to the point of being able to simulate an actual Pokémon Emerald battle with
+any set of moves in that game.
+
+# Long-Term Goals
 
 ## Graphics, Visuals, and Aesthetics
 The graphical features of the game are essentially in the planning phase, but
 the general aesthetic of the game aims to replicate that of Pokémon Emerald as
 well.
 
-Here is an example of how this might look: https://youtu.be/uvlWKOf7aeE?si=CoTch6Mw-qKNoXbk&t=43
+Here is an example of how this might look: 
+https://youtu.be/uvlWKOf7aeE?si=CoTch6Mw-qKNoXbk&t=43
 
 As far as sprites (2D character models) are concerned, characters with existing
 sprites in Pokémon Emerald will have their sprites from that game used, while
-characters from newer Pokémon games will have sprites commissioned in the
-artistic style of those in Pokémon Emerald for use in Project Frontiers
-exclusively.
+characters from newer Pokémon games will have sprites commissioned from sprite
+artists in the artistic style of Pokémon Emerald for exclusive use in Project
+Frontiers.
 
 ## Gameplay (WIP)
 
@@ -94,8 +136,8 @@ opposing Pokémon.
 
 There are obviously a lot of intricacies to the game, but they are fairly easy
 to get used to through experience, and, once the player understands the various
-systems within the game and knows how to execute them, they will be rewarded
-greatly through success in combat.
+systems within the game and how to exploit them, they will be rewarded greatly
+through success in combat.
 
 ### Challenges (WIP)
 
