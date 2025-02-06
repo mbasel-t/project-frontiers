@@ -85,7 +85,7 @@ public class BattleSim {
         GameInterface.output("\n" + action.user().name() + " used " + action.move().name() + "!");
         GameInterface.delay();
         if (action.move().toHit(action.user(), action.target())) {
-            action.target().damage(action.move().attack(action.user(), action.target()));
+            action.move().execute(action.user(), action.target());
             this.displayHP();
             GameInterface.output("");
         } else {

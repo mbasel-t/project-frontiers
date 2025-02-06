@@ -77,10 +77,15 @@ public class PriorityBracket {
         if (!actions.isEmpty()) {
             // checks if multiple items tied for fastest
             int num_same = 1;
-            boolean same = (this.actions.size() >= 2 ? this.actions.get(this.actions.size()-1).speed() == this.actions.get(this.actions.size()-2).speed() && this.actions.get(this.actions.size()-1).priority() == this.actions.get(this.actions.size()-2).priority() : false);
+            boolean same = (this.actions.size() >= 2 ?
+                this.actions.get(this.actions.size()-1).speed() == this.actions.get(this.actions.size()-2).speed()
+                    && this.actions.get(this.actions.size()-1).priority() == this.actions.get(this.actions.size()-2).priority() :
+                false);
             while(same) {
                 num_same++;
-                same = (this.actions.size() >= num_same+1 ? this.actions.get(this.actions.size()-num_same).speed() == this.actions.get(this.actions.size()-1-num_same).speed() : false);
+                same = (this.actions.size() >= num_same+1 ?
+                    this.actions.get(this.actions.size()-num_same).speed() == this.actions.get(this.actions.size()-1-num_same).speed() :
+                    false);
             }
 
             // select and remove fastest value; if multiple are tied, pick at random
